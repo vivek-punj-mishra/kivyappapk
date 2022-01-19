@@ -1,0 +1,80 @@
+WindowManager:
+    LoginWindow:
+    WelcomeWindow:
+
+<LoginWindow>:
+    name:"loginWindow"
+    email : email
+    password:password
+    BoxLayout:
+        orientation:"horizontal"
+        pos_hint:{"center_y":0.5}
+        size: root.width,100
+
+        MDFlatButton:
+            id:notifyMenu
+            text: "Notify"
+            font_size:12
+            md_bg_color:(0,128,0)
+            elevation:5
+        MDFlatButton:
+            id:rewardMenu
+            text: "Rewards"
+            font_size:12
+            md_bg_color:(0,128,0)
+            elevation:5
+        MDFlatButton:
+            id:mailMenu
+            text: "Mail"
+            font_size:12
+            md_bg_color:(0,128,0)
+            elevation:5
+        MDFlatButton:
+            id:chatMenu
+            text: "Chat"
+            font_size:12
+            md_bg_color:(0,128,0)
+            elevation:5
+        MDFlatButton:
+            id:payMenu  
+            text: "Pay"
+            font_size:12
+            md_bg_color:(0,128,0)
+            elevation:5
+    MDCard:
+        size_hint:None,None
+        size:300,250
+        pos_hint: {"center_x":0.5,"center_y":0.5}
+        elevation:10
+        padding:25
+        spacing:25
+        orientation:'vertical'
+    
+       
+        MDTextField:
+            id:email
+            hint_text:"Email"
+            icon_right: "account"
+            size_hint_x:None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x":0.5}
+        MDTextField:
+            id:password
+            hint_text:"Password"
+            icon_right: "eye-off"
+            size_hint_x:None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x":0.5}
+            password:True
+        MDFlatButton:
+            text: "Login"
+            font_size:12
+            elevation:5
+            pos_hint:{"center_x":0.5}
+            on_press:root.validate()
+<WelcomeWindow>:
+    name:"welcomeWindow"
+    Label:
+        text:"Welcome"

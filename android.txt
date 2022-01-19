@@ -1,0 +1,3 @@
+title=Eezyn
+author=Kpono Akpabio
+orientation=portrait

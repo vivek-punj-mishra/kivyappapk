@@ -1,0 +1,641 @@
+<Button>:
+    font_name:"Arial"  
+    font_size:"10px"
+<Label>:
+    font_name:"Arial"
+    font_size:"10px"
+
+
+<ContactScrollview>:
+    size_hint_x:None
+    width:"200dp"
+
+<MessageScrollview>:
+    size_hint_x:6
+<ScrollableTopMenu>:
+    size_hint_y:0.2
+    do_scroll_y:False
+    do_scroll_x:True
+    
+    BoxLayout:
+        orientation:"horizontal"
+        padding:10
+        size_hint_x:1
+        size_hint_y:1
+        pos_hint:{"center_x":0.5}
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            id:notifyBtn
+            text:"Notify"
+            background_color:(0, 0, 1, 1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press:root.manager.current="notifyMessageListScreen"
+        Button:
+            id:rewardsBtn
+            text:"Rewards"
+            background_color:(0, 1, 0, 1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+
+        Button:
+            id:mailBtn
+            text:"Mail"
+            background_color:(1, 0, 0, 1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press:root.manager.current="mailInboxScreen"
+        
+        Button:
+            id:chatBtn
+            text:"Chat"
+            background_color:(1, 0, 1, 1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press: root.manager.current = 'chatContactsScreen'
+        Button:
+            id:payBtn
+            text:"Pay"
+            background_color:(255/255, 165/255, 0/255,1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+        Button:
+            id:searchBtn
+            text:"Search"
+            background_color:(1,1,1,1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press: root.manager.current = 'searchScreen'
+        Button:
+            id:gameBtn
+            text:"Games"
+            background_color:(1, 1, 0,1.0)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press: root.manager.current = 'gamesScreen'
+<ScrollableTopMenuLogin>:
+    do_scroll_y:False
+    do_scroll_x:True
+    
+    BoxLayout:
+        orientation:"horizontal"
+        padding:10
+        size_hint_x:1
+        size_hint_y:0.2
+        pos_hint:{"center_x":0.5}
+        canvas:
+            Color:
+                rgba: 1,0,1,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            id:notifyBtn
+            text:"Notify"
+            background_color:(0, 0, 1, 1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press:root.manager.current="notifyMessageListScreen"
+        Button:
+            id:rewardsBtn
+            text:"Rewards"
+            background_color:(0, 1, 0, 1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+
+        Button:
+            id:mailBtn
+            text:"Mail"
+            background_color:(1, 0, 0, 1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press:root.manager.current="mailInboxScreen"
+        
+        Button:
+            id:chatBtn
+            text:"Chat"
+            background_color:(1, 0, 1, 1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press: root.manager.current = 'chatContactsScreen'
+        Button:
+            id:payBtn
+            text:"Pay"
+            background_color:(255/255, 165/255, 0/255,1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+        Button:
+            id:searchBtn
+            text:"Search"
+            background_color:(1,1,1,1)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press: root.manager.current = 'searchScreen'
+        Button:
+            id:gameBtn
+            text:"Games"
+            background_color:(1, 1, 0,1.0)
+            pos_hint:{"center_x":0.1}
+            size_hint_x:(0.2)
+            on_press: root.manager.current = 'gamesScreen'
+
+<BottomMenu>:
+    orientation:"horizontal"
+    size_hint_x:0.9
+    size_hint_y:None
+    height:"70dp"
+
+    padding:10
+    pos_hint:{"center_x":0.5}
+    canvas:
+        Color:
+            rgba: 1,1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        background_normal:"icons/home.png"
+        pos_hint:{"center_x":0.2}
+        size_hint_x:(0.15)
+    Button:
+        background_normal:"icons/gallery.png"
+        size_hint_x:(0.15)
+    Button:
+        background_normal:"icons/cart.png"
+        size_hint_x:(0.15)
+    Button:
+        background_normal:"icons/dollar.png"
+        size_hint_x:(0.15)
+    Button:
+        background_normal:"icons/phone.png"
+        size_hint_x:(0.15)
+    Button:
+        background_normal:"icons/internet.png"
+        size_hint_x:(0.15)
+    Button:
+        background_normal:"icons/help.jpg"
+        size_hint_x:(0.15)
+
+<AfterTopMenuLayout>:
+    orientation:"horizontal"
+    padding:10
+    size_hint_y:0.2
+    size_hint_x:0.9
+    pos_hint:{"center_x":0.5}
+
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<SearchBarLayout>:
+    orientation:"horizontal"
+    padding:10
+    size_hint_y:0.2
+    canvas:
+        Color:
+            rgba: 1, 1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<LoginScreen>:
+    name:"loginScreen"
+    email : email
+    password:password
+    BoxLayout:
+        orientation:"vertical"
+        canvas:
+            Color:
+                rgba: 1, 1, 1,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    
+        ScrollableTopMenu:
+     
+        GridLayout:
+            pos_hint:{"center_x":0.5,"center_y":0.4}
+            size_hint_x:(0.9)
+            cols:1
+            rows:3
+
+            canvas:
+                Color:
+                    rgba: 1,1,1,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            MDTextField:
+                id:email
+                hint_text:"Email"
+                icon_right: "account"
+                width: 100
+                size_hint_x:0.5
+                font_size: 18
+                pos_hint: {"center_x":0.5}
+            MDTextField:
+                id:password
+                hint_text:"Password"
+                icon_right: "eye-off"
+                size_hint_x:0.5
+                width: 100
+                font_size: 18
+                pos_hint: {"center_x":0.5}
+                password:True
+            MDFlatButton:
+                text: "Login"
+                font_size:12
+                elevation:5
+                halign:"right"
+                pos_hint:{"center_x":0.5}
+                on_press:root.login()
+        
+        BottomMenu:
+
+<WelcomeScreen>:
+    name:"welcomeScreen"
+    welcomeName:welcomeName
+  
+    BoxLayout:
+        orientation:"vertical"
+    
+        ScrollableTopMenu:
+        GridLayout:
+            pos_hint:{"center_x":0.5}
+            size_hint_x:(0.9)
+            cols:1
+            rows:2
+
+            canvas:
+                Color:
+                    rgba: 1, 1,1,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            
+            Label:
+                id:welcomeName
+                bold:True
+                text_size: self.width, None
+                size_hint: 1, None
+                height: self.texture_size[1]
+                color:(0, 0, 0,1)
+                padding_y:20
+
+            Label:
+                id:welcomeText
+                pos_hint:{"center_x":0.5,"center_y":0.7}
+                text_size: self.width, None
+                text:"What a wonderful day to be alive. So much Kivy and Pythoning to do. But wait what is all the fuss about"
+                size_hint: 1, None
+                height: self.texture_size[1]
+                color:(0, 0, 0,1)
+                padding_y:15
+        BottomMenu:
+
+<ChatContactsScreen>:
+    name:"chatContactsScreen"
+    chatContactsBoxLayout:chatContactsBoxLayout 
+   
+    BoxLayout:
+        orientation:"vertical" 
+        ScrollableTopMenu:
+        AfterTopMenuLayout:
+            Button:
+                text:"Chat"
+                background_color:(1, 0, 1, 1)
+                size_hint_x:(0.2)
+            Label:
+                text:"Advertisements go here"
+                size_hint_x:(0.8)
+                color:(0,0,0,1)
+        
+        BoxLayout:
+            id:chatContactsBoxLayout
+            size_hint_x:(0.9)
+            size_hint_y:1
+            pos_hint:{"center_x":0.5}
+     
+            orientation:"vertical"
+            canvas:
+                Color:
+                    rgba: 1,1,1,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+  
+        BottomMenu:
+
+<ChatScreen>:
+    name:"chatScreen"
+    chatScreenBoxLayout:chatScreenBoxLayout
+    chatMessage:chatMessage
+    BoxLayout:
+        orientation:"vertical"
+        size_hint_x:None
+        width:root.width
+        size_hint_y:1
+    
+        ScrollableTopMenu:
+        AfterTopMenuLayout:
+            Button:
+                text:"Chat"
+                background_color:(1, 0, 1, 1)
+                size_hint_x:(0.2)
+                on_press:root.manager.current='chatContactsScreen'
+            Label:
+                text:"Advertisements go here"
+                size_hint_x:(0.7)
+                color:(0,0,0,1)
+        
+        BoxLayout: 
+            size_hint_x:(0.9)
+            size_hint_y:1
+            pos_hint:{"center_x":0.5}
+     
+            orientation:"vertical"
+            canvas:
+                Color:
+                    rgba: 1,1,1,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            BoxLayout:
+                id:chatScreenBoxLayout
+                size_hint_y:0.7
+                orientation:"vertical"
+
+            BoxLayout:
+                id:chatTypeandSendLayout
+                orientation:"horizontal"
+
+                TextInput:
+                    id:chatMessage
+                    multiline:True
+                    size_hint_x:(0.9)
+                    size_hint_y:(0.3)
+                    pos_hint_x:(1)
+                    
+                Button:
+                    size_hint_x:(0.1)
+                    size_hint_y:(0.3)
+                    background_normal:"icons/play.jpg"
+                    on_press: root.sendChat()
+
+        BottomMenu:
+
+<NotifyMessageListScreen>:
+    name:"notifyMessageListScreen"
+    notifyDropDownLayout:notifyDropDownLayout
+    notifyMessageListLayout:notifyMessageListLayout
+    BoxLayout:
+        orientation:"vertical"
+        ScrollableTopMenu:              
+        AfterTopMenuLayout:
+            Button:
+                text:"Notify"
+                background_color:(0, 0, 1, 1)
+                size_hint_x:(0.2)
+            Label:
+                text:"Advertisements go here"
+                size_hint_x:(0.8)
+                color:(1,1,1,1)
+
+        BoxLayout:   
+            orientation:"vertical"
+            size_hint_x:(0.9)
+            size_hint_y:1
+            pos_hint:{"center_x":0.5}
+            canvas:
+                Color:
+                    rgba: 1, 1,1,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            
+            BoxLayout:  
+                id:notifyDropDownLayout
+                size_hint_y:0.1
+                pos_hint:{"center_y":0.6}
+                size_hint_x:0.25
+                pos_hint:{"center_x":0.87}
+                canvas:
+                    Color:
+                        rgba: 1, 1,1,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            
+            BoxLayout:  
+                id:notifyMessageListLayout 
+                size_hint_y:0.4
+                pos_hint:{"center_y":0.4}
+                canvas:
+                    Color:
+                        rgba: 1, 1,1,1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            
+        BottomMenu:
+
+<NotifyMessageScreen>:
+    name:"notifyMessageScreen"
+    notifyMessageScreenBreadCrumb:notifyMessageScreenBreadCrumb
+    notifyMessageScreenDate:notifyMessageScreenDate
+    notifyMessageScreenMessage:notifyMessageScreenMessage
+    BoxLayout:
+        orientation:"vertical"
+
+        ScrollableTopMenu:
+        AfterTopMenuLayout:
+            Button:
+                text:"Notify"
+                background_color:(0, 0, 1, 1)
+                size_hint_x:(0.2)
+            Label:
+                text:"Advertisements go here"
+                size_hint_x:(0.8)
+                color:( 0, 0,0,1)
+        
+    
+        GridLayout:
+            pos_hint:{"center_x":0.5}
+            size_hint_x:(0.9)
+            cols:1
+            rows:3
+
+            canvas:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                id:notifyMessageScreenBreadCrumb
+                text_size: self.width, None
+                size_hint: 1, None
+                height: self.texture_size[1]
+                color:(0, 0, 0,1)
+                bold:True
+                padding_y:15
+            Label:
+                id:notifyMessageScreenDate
+                text_size: self.width, None
+                size_hint: 1, None
+                font_size:12
+                height: self.texture_size[1]
+                color:(0, 0, 0,1)  
+                padding_y:20
+            Label:
+                id:notifyMessageScreenMessage
+                text_size: self.width, None
+                size_hint: 1, None
+                height: self.texture_size[1]
+                color:(0, 0, 0,1) 
+                padding_y:30  
+   
+            
+
+
+  
+            
+        BottomMenu:
+
+<MailInboxScreen>:
+    name:"mailInboxScreen"
+    inboxListLayout:inboxListLayout
+    BoxLayout:
+        orientation:"vertical"
+    
+        ScrollableTopMenu:
+        AfterTopMenuLayout:
+            Button:
+                text:"Mail"
+                background_color:(1, 0, 0, 1)
+                size_hint_x:(0.2)
+            Label:
+                text:"Advertisements go here"
+                size_hint_x:(0.8)
+                color:(0,0,0,1)
+
+        BoxLayout: 
+            id:inboxListLayout     
+            orientation:"horizontal"
+            size_hint_x:(0.9)
+            size_hint_y:0.2
+            pos_hint:{"center_x":0.5}
+                   
+            canvas:
+            
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text:"Inbox"
+                color:(0,0,0,1) 
+                size_hint_x:(0.2)
+                pos_hint:{"center_x":0.1}
+                font_style:"bold"
+            Label:
+                text:"New"
+                color:(0,0,0,1) 
+                size_hint_x:(0.2)
+                pos_hint:{"center_x":1}
+            Label:
+                text:"Search"
+                color:(0,0,0,1) 
+                size_hint_x:(0.2)
+                pos_hint:{"center_x":1}
+        BoxLayout: 
+            id:inboxListLayout     
+            orientation:"vertical"
+            size_hint_x:(0.9)
+            size_hint_y:0.8
+            pos_hint:{"center_x":0.5}
+                   
+            canvas:
+            
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            
+  
+        BottomMenu:
+       
+<SearchScreen>:
+    name:"searchScreen"
+    searchText:searchText
+    searchResultsBox:searchResultsBox 
+    BoxLayout:
+        orientation:"vertical"
+    
+        ScrollableTopMenu:
+        AfterTopMenuLayout:
+            Button:
+                text:"Search"
+                background_color:(1,1,1,1)
+                size_hint_x:(0.2)
+                
+            Label:
+                text:"Advertisements go here"
+                size_hint_x:(0.8)
+                color:(0,0,0,1)
+        SearchBarLayout:
+            size_hint_x:(0.9)
+            pos_hint:{"center_x":0.5}
+            
+            TextInput:
+                id:searchText
+                size_hint_x:(0.8)
+            Button:
+                text:"Go"
+                background_color:(1, 1, 1,1)
+                size_hint_x:(0.1)
+                color:(0, 0, 0,1)
+                on_press:root.search()
+        BoxLayout: 
+            id:searchResultsBox    
+            orientation:"vertical"
+            size_hint_x:(0.9)
+            pos_hint:{"center_x":0.5}
+            canvas:
+                Color:
+                    rgba: 1, 1,1,1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size  
+
+        BottomMenu:
+<GamesScreen>:
+    name:"gamesScreen"
+    gamesBoxLayout:gamesBoxLayout
+    BoxLayout:
+        orientation:"vertical"
+    
+        ScrollableTopMenu:
+        AfterTopMenuLayout:
+            Button:
+                text:"Games"
+                size_hint_x:(0.2)
+                background_color:(1, 1, 0,1.0)
+            Label:
+                text:"Advertisements go here"
+                size_hint_x:(0.8)
+                color:(0,0,0,1)
+        
+        BoxLayout:
+            id:gamesBoxLayout
+            orientation:"vertical"
+            size_hint_x:(0.9)
+            size_hint_y:1
+            pos_hint:{"center_x":0.5}
+            canvas:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+  
+        BottomMenu:
